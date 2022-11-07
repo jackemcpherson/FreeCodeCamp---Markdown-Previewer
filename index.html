@@ -35,10 +35,18 @@
     </footer>
   </body>
   <script>
+    $(document).ready(function () {
+      let defaultStr = `# Welcome to my Markdown Previewer\n
+## You can edit the text in the first box and it will change the html displayed here.\n
+### Have fun!`;
+
+      $("#editor").text(defaultStr);
+      $("#preview").html(marked.parse(defaultStr));
+    });
+
     $("#editor").bind("input", function () {
       let inputStr = $(this).val();
-      inputStr = marked.parse(inputStr);
-      $("#preview").html(inputStr);
+      $("#preview").html(marked.parse(inputStr));
     });
   </script>
 </html>
