@@ -37,7 +37,8 @@
   <script>
     $("#editor").bind("input", function () {
       let inputStr = $(this).val();
-      $("#preview").text(inputStr);
+      inputStr = marked.parse(inputStr);
+      $("#preview").html(inputStr);
     });
   </script>
 </html>
