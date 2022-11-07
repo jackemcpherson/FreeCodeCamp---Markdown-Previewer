@@ -34,4 +34,10 @@
       <p>CSS Theme by <a href="https://watercss.kognise.dev/">Water.css</a></p>
     </footer>
   </body>
+  <script>
+    $("#editor").bind("input", function () {
+      let inputStr = $(this).val();
+      $("#preview").text(inputStr);
+    });
+  </script>
 </html>
